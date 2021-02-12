@@ -25,5 +25,5 @@
         "sass-loader": "^8.0.2",
         "tailwindcss": "^2.0.1"
     },
-    "dependencies": {}
+    "dependencies": []
 }

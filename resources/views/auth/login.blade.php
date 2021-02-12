@@ -26,17 +26,17 @@
                     <x-jet-input id="password" style="float:right;" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
                 </div>
                 <div class="mt-3">
-                <button type="submit" style="float:right;" class="btn btn-black">Login</button>
+                    <button type="submit" style="float:right;" class="btn btn-black">Login</button>
                 </div>
                 @if (session('status'))
                     <div class="mb-4 font-medium text-sm text-green-600">
                         {{ session('status') }}
                     </div>
             @endif
-                </div>
-            </form>
         </div>
+        </form>
     </div>
+</div>
 </div>
 
 
@@ -125,5 +125,3 @@
 
 
 </style>
-
-

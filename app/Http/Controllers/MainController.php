@@ -48,6 +48,7 @@ class MainController extends Controller
         $news= News::with('category')->get();
         return view('News.list',compact('news'));
     }
+
     public  function  authors_add(){
         return view('Author.addauthor');
     }
