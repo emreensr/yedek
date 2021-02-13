@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Category;
+use App\Models\News;
 
 class Author extends Model
 {
@@ -12,8 +12,8 @@ class Author extends Model
 
     protected $fillable= ['name','status'];
 
-    public function category(){
-        return $this->belongsTo(Category::class);
+    public function news(){
+        return $this->hasMany(News::class);
     }
 
 }

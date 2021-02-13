@@ -30,16 +30,19 @@
             @foreach($news as $new)
                 <tr>
                     <th scope="row">{{$loop->iteration}}</th>
-                    <td> {{$new->cat_id}}</td>
+                    <td> {{$new->category->name ?? ''}}</td>
                     <td>  {{$new->title}}</td>
                     <td> @if($new->photo)
                             <a href="{{url('storage/images/'.$new->photo)}}" target="_blank" class="btn btn-sm btn-secondary">Görüntüle</a></td>
                     @endif
                     </td>
-                    <td>  {{$new->author_id}}</td>
+                    <td>  {{$new->author->name}}</td>
                     <td>  {{$new->description}}</td>
-                    <td>  {{$new->status}}</td>
-
+                    <td>  @if($new->status ==1)
+                            Aktif
+                        @else
+                            Pasif
+                        @endif
                     <td>
                         <a class="btn btn-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')" href="{{route('news_delete', $new->id)}}"><i class="fa fa-trash"></i></a>
                         <a class="btn btn-primary" href="{{route('news_update',$new->id)}}"><i class="fa fa-pen"></i></a>

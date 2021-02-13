@@ -29,8 +29,12 @@
                 <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td> {{$author->name}}</td>
-                    <td>  {{$author->status}}</td>
-
+                    <td>
+                        @if($author->status ==1)
+                            Aktif
+                        @else
+                            Pasif
+                        @endif
                     <td>
                         <a class="btn btn-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')" href="{{route('authors_delete', $author->id)}}"><i class="fa fa-trash"></i></a>
                         <a class="btn btn-primary" href="{{route('authors_update',$author->id)}}"><i class="fa fa-pen"></i></a>

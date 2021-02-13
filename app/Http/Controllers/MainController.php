@@ -45,9 +45,10 @@ class MainController extends Controller
 
     }
     public function news_index(){
-        $news= News::with('category')->get();
+        $news = News::with('category','author')->get();
         return view('News.list',compact('news'));
     }
+
 
     public  function  authors_add(){
         return view('Author.addauthor');
